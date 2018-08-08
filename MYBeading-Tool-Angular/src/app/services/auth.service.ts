@@ -1,7 +1,11 @@
+
+import {throwError as observableThrowError} from 'rxjs';
+
+import {catchError, map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
@@ -13,49 +17,56 @@ export class AuthService {
 
   handleError(e) {
     // this.errorMessage = e.json().message;
-     return Observable.throw(e.json().message);
+     return observableThrowError(e.json().message);
   }
 
   signup(user) {
-    return this.http.post(`http://localhost:3000/api/signup`, user, {withCredentials:true})
-      .map(res => res.json())
-      .catch(this.handleError);
+    return this.http.post(`http://localhost:3000/signup`, user, {withCredentials:true}).pipe(
+      map(res => res.json()),
+      catchError(this.handleError),);
   }
 
   login(user) {
-    return this.http.post(`http://localhost:3000/api/login`, user, {withCredentials:true})
-      .map(res => res.json())
-      .catch(this.handleError);
+    return this.http.post(`http://localhost:3000/login`, user, {withCredentials:true}).pipe(
+      map(res => res.json()),
+      catchError(this.handleError),);
   }
 
   logout() {
-    return this.http.post(`http://localhost:3000/api/logout`, {}, {withCredentials:true})
-      .map(res => res.json())
-      .catch(this.handleError);
+    return this.http.post(`http://localhost:3000/logout`, {}, {withCredentials:true}).pipe(
+      map(res => res.json()),
+      catchError(this.handleError),);
   }
 
   isLoggedIn() {
-    return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials:true})
-      .map((res) => { 
+    return this.http.get(`http://localhost:3000/loggedin`, {withCredentials:true}).pipe(
+      map((res) => { 
         JSON.parse ((<any>res)._body)
-      })
-      .catch(this.handleError);
+      }),
+      catchError(this.handleError),);
   }
 
-  update(user) {
-    return this.http.post(`http://localhost:3000/api/update`,user, {withCredentials:true})
-      .map((res) => { 
+  updateUser(user) {
+    return this.http.post(`http://localhost:3000/update`, user, {withCredentials:true}).pipe(
+      map((res) => { 
         JSON.parse ((<any>res)._body)
-      })
-      .catch(this.handleError);
+      }),
+      catchError(this.handleError),);
   }
+  
+  
   delete(user) {
-    return this.http.post(`http://localhost:3000/api/delete`,user, {withCredentials:true})
-      .map((res) => { 
-        JSON.parse ((<any>res)._body)
-      })
-      .catch(this.handleError);
+    return this.http.post(`http://localhost:3000/delete`,user, {withCredentials:true}).pipe(
+    map((res)=> res.json()))
   }
 
+
+  getOneUser(userId) {
+    return this.http.post(`http://localhost:3000/user/` + userId, {withCredentials:true}).pipe(
+    map((res) => { 
+      JSON.parse ((<any>res)._body)
+    }),
+    catchError(this.handleError),);
+}
 
 }

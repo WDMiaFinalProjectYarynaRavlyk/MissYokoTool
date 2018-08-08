@@ -7,7 +7,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
 import { UserpageComponent } from './user/userpage/userpage.component';
-import { CreateUserComponent } from './user/create-user/create-user.component';
+import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { ListComponent } from './item/list/list.component';
 import { OneItemComponent } from './item/one-item/one-item.component';
 import { CreateItemComponent } from './item/create-item/create-item.component';
@@ -25,16 +25,25 @@ import { ProjectService } from './services/project.service';
 
 
 const routes: Routes = [
-  // { path: '', component: LoginComponent },
-];
+  { path: '', component: ListComponent },
+  // { path: 'inventory/:id', component: OneItemComponent},
+  // { path: 'inventory/:id/update', component: UpdateItemComponent},
+  
+  // { path: 'user/update', component: UpdateUserComponent},
+  // { path: 'user', component: UserpageComponent},
 
+  // { path: 'projects', component: AllProjectsComponent},
+  // { path: 'projects/:id', component: OneProjectComponent},
+  // { path: 'projects/:id/update', component: UpdateProjectComponent}
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserpageComponent,
-    CreateUserComponent,
+    UpdateUserComponent,
     ListComponent,
     OneItemComponent,
     CreateItemComponent,

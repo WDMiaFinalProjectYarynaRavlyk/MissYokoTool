@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {AuthService}         from '../../services/auth.service';
 
 @Component({
   selector: 'app-userpage',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserpageComponent implements OnInit {
 
-  constructor() { }
+  user: any;
 
+  constructor(private theRoute: ActivatedRoute,
+    private myService: AuthService) { }
+
+  
   ngOnInit() {
+    this.theRoute.params
+      .subscribe((params) => {
+        this.myService.getOneUser(params['id'])
+        
+        .subscribe((theUser)=>{
+          this.user = theUser
+        })   
+      });
   }
 
 }

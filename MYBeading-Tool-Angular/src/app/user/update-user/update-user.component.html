@@ -1,0 +1,25 @@
+<h2>Update your profile</h2>
+  
+<form class="form" (submit)="updateAccount()">
+  <label class="floaty2" for="username">Username</label> 
+  <input class="floaty" for="username" [(ngModel)]="user.username" name="username" type="text">
+  <br><br>
+  <label class="floaty2" for="password">Password</label> 
+  <input class="floaty" for="password" [(ngModel)]="user.password" name="password" type="password" >
+  <br><br>
+  <label class="floaty2" for="name">Name</label> 
+  <input class="floaty" for="name" [(ngModel)]="user.name" name="name" type="text">
+  <br><br>
+  <label class="floaty2" for="lastname">Last Name</label> 
+  <input class="floaty" for="lastname" [(ngModel)]="user.lastname" name="lastname" type="text">
+  <br><br>
+  <label class="floaty2" for="email">Email</label> 
+  <input class="floaty" for="email" [(ngModel)]="user.email" name="email" type="email">
+  <br><br>
+  <label class="floaty2" for="image">Image</label>
+  <input [(ngModel)]="user.image"  class="newfile" type="file" name="theImage" id="image">
+  <br><br>
+ 
+  <button class="buttonSubmit">Complete Registration</button>
+
+</form>
