@@ -20,14 +20,21 @@ import { UpdateProjectComponent } from './project/update-project/update-project.
 import { AuthService } from './services/auth.service';
 import { ItemService } from './services/item.service';
 import { ProjectService } from './services/project.service';
+// images setup:
+import { FileUploadModule } from "ng2-file-upload";
 
 
 
 
 const routes: Routes = [
-  { path: '', component: ListComponent },
-  // { path: 'inventory/:id', component: OneItemComponent},
-  // { path: 'inventory/:id/update', component: UpdateItemComponent},
+  { path: '', component: LoginComponent },
+  { path: 'update', component: UpdateUserComponent },
+  { path: 'logout', component: LoginComponent },
+  { path: 'loggedin', component: LoginComponent },
+  
+  { path: 'inventory', component: ListComponent },
+  { path: 'inventory/:id', component: OneItemComponent},
+  { path: 'inventory/:id/update', component: UpdateItemComponent},
   
   // { path: 'user/update', component: UpdateUserComponent},
   // { path: 'user', component: UserpageComponent},
@@ -57,6 +64,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    FileUploadModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

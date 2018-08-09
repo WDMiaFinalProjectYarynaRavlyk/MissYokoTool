@@ -2,14 +2,13 @@
 
 <div class="form ">
 
-
   <div *ngIf="theActualUser.password">
-       User:  {{theActualUser.username | json}}
+       Hello, {{theActualUser.username | json}}
        <button class="buttonSubmit" (click)="logMeOut()">Log Out</button>   
   
-       <!-- <router-outlet></router-outlet> -->
-
-
+       <button class="buttonSubmit"><a [routerLink]="['/update']">Update User</a></button>
+       <button class="buttonSubmit"><a [routerLink]="['/user/:id']">Account</a></button>
+       <a [routerLink]="['/inventory']">List</a>
   </div>
   
  
@@ -35,7 +34,7 @@
       <input class="floaty" for="email" [(ngModel)]="signUpUser.email" name="email" type="text">
       <br><br>
       <label class="floaty2" for="image">Image</label>
-      <input [(ngModel)]="signUpUser.image"  class="newfile" type="file" name="theImage" id="image">
+      <input ng2FileSelect [uploader]="myCoolUploader"  class="newfile" type="file" name="theImage">
       <br><br>
      
       <button class="buttonSubmit">Complete Registration</button>
@@ -50,7 +49,7 @@
       <input class="floaty" for="username" [(ngModel)]="loginUser.username" name="name" type="text">
       <br><br>
       <label class="floaty2" for="password">Password</label>
-      <input class="floaty" for="password" [(ngModel)]="loginUser.password" name="password" type="text">
+      <input class="floaty" for="password" [(ngModel)]="loginUser.password" name="password" type="password">
       <br>
       <button class="buttonSubmit">Log In</button>
     </form>
@@ -60,6 +59,3 @@
   
 </div>
     
-<button class="buttonSubmit"><a [routerLink]="['/user']">Update User</a></button>
-
-

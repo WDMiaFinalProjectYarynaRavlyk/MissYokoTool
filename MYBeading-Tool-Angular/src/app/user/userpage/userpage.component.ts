@@ -16,9 +16,16 @@ export class UserpageComponent implements OnInit {
 
   
   ngOnInit() {
+    this.myService.isLoggedIn()
+      .toPromise()
+      .then( loggedInUser => {
+        // console.log('loggedInUser: ', loggedInUser)
+        this.user = loggedInUser;
+      } )
+      .catch( err => err.json() )
     this.theRoute.params
       .subscribe((params) => {
-        this.myService.getOneUser(params['id'])
+        this.myService.getOneUser(params._id)
         
         .subscribe((theUser)=>{
           this.user = theUser

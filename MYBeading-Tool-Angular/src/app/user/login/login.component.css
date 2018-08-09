@@ -23,6 +23,11 @@
     margin: 10px; 
 }
 
+.buttonSubmit a{
+text-decoration: none;
+color: white;
+}
+
 h2 {
     color: #43a3e6
 }

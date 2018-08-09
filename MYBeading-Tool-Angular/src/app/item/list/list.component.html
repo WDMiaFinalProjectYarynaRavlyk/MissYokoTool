@@ -1,3 +1,31 @@
-<p>
-  list works!
-</p>
+
+<h2>Your inventory</h2>
+<!-- <form  class="form"  (submit)="addNew()">
+  <h3>Add Task</h3>
+
+  <label class="floaty2">Task</label>
+  <input class="floaty" #title [(ngModel)]="task.title" name="title" type="text">
+
+  <br><br><br>
+
+  <label class="floaty2">Description</label>
+  <textarea class="floaty" #description [(ngModel)]="task.description" name="description" cols="30" rows="10"></textarea>
+
+
+<button class="buttonSubmit">Submit</button>
+
+</form> -->
+
+
+<div class="form" *ngFor="let item of items">
+
+  <h3>item: {{item.title}}</h3>
+  <p>Quantity: {{item.quantity}}</p>
+  <p>{{item.shortdescription}}</p>
+  <a class="buttonSubmit" [routerLink]="[item._id]">See Details</a><br>
+  <button class="buttonSubmit" (click)='deleteOne(item_id)'>Delete</button><br>
+  <a class="buttonSubmit" [routerLink]="[item._id, 'update']">Update</a>
+ 
+  <hr> 
+</div>
+

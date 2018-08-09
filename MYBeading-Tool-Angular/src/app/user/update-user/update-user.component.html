@@ -17,9 +17,12 @@
   <input class="floaty" for="email" [(ngModel)]="user.email" name="email" type="email">
   <br><br>
   <label class="floaty2" for="image">Image</label>
-  <input [(ngModel)]="user.image"  class="newfile" type="file" name="theImage" id="image">
+  <input ng2FileSelect [uploader]="myCoolUploader" class="newfile" type="file" name="theImage">
   <br><br>
  
-  <button class="buttonSubmit">Complete Registration</button>
+  <button class="buttonSubmit">Update</button>
+
+  <div *ngIf="theError">error: {{theError}} </div>
+  
 
 </form>
