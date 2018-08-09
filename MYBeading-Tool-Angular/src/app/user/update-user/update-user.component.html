@@ -1,6 +1,6 @@
 <h2>Update your profile</h2>
   
-<form class="form" (submit)="updateAccount()">
+<form class="form" (submit)="updateAccount(user)">
   <label class="floaty2" for="username">Username</label> 
   <input class="floaty" for="username" [(ngModel)]="user.username" name="username" type="text">
   <br><br>
@@ -17,7 +17,7 @@
   <input class="floaty" for="email" [(ngModel)]="user.email" name="email" type="email">
   <br><br>
   <label class="floaty2" for="image">Image</label>
-  <input ng2FileSelect [uploader]="myCoolUploader" class="newfile" type="file" name="theImage">
+  <input ng2FileSelect [uploader]="myCoolUploader"  class="newfile" type="file" name="theImage">
   <br><br>
  
   <button class="buttonSubmit">Update</button>

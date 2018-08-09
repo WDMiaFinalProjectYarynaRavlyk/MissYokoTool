@@ -7,6 +7,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router'
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   signUpUser:any    = {};
   theActualUser:any = {};
   loginUser:any     = {};
-  theError:any          ;
+  theError:any;
 
 
   myCoolUploader = new FileUploader({

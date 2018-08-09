@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService}         from '../../services/auth.service';
-
-import { FileUploader } from 'ng2-file-upload';
-import { environment } from '../../../environments/environment';
+import { AuthService}         from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router'
 import { LoginComponent } from '../login/login.component';
 
+
+import { FileUploader } from 'ng2-file-upload';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class UpdateUserComponent implements OnInit {
   
 
 user:any = {};
-theError:any          ;
+theError:any;
 
   myCoolUploader = new FileUploader({
     // url: environment.apiBase + "/signup",  ${environment.apiBase}
@@ -28,9 +28,8 @@ theError:any          ;
   constructor(private theRoute: ActivatedRoute,private homeRouter: Router, private myService: AuthService) { }
 
   updateAccount(user){
-    console.log("User to update",this.user)
     this.myService.updateUser(this.user)
-    .subscribe(res=>{
+    .subscribe(()=>{
       this.myCoolUploader.onBuildItemForm = (item, form) => {
         form.append("username", user.username);
         form.append("password", user.password);
@@ -39,11 +38,11 @@ theError:any          ;
         form.append("email", user.email);
         
       }
-      this.myCoolUploader.onSuccessItem = (item, response) =>{
+      this.myCoolUploader.onSuccessItem = (item) =>{
         this.homeRouter.navigate(["/"]);
       }
-      this.myCoolUploader.onErrorItem = (item, response) => {
-        this.theError = "Saving entry with image went bad. Sorry!";
+      this.myCoolUploader.onErrorItem = (item) => {
+      this.theError = "Saving entry with image went bad. Sorry!";
       }
       this.myCoolUploader.uploadAll();
       })
@@ -54,7 +53,7 @@ theError:any          ;
       this.myService.isLoggedIn()
       .toPromise()
       .then( loggedInUser => {
-        // console.log('loggedInUser: ', loggedInUser)
+     
         this.user = loggedInUser;
       } )
       .catch( err => err.json() )
