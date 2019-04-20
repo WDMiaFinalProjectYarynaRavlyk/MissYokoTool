@@ -48,7 +48,7 @@ export class AuthService {
     return this.http.post(`http://localhost:3000/update`, user, {withCredentials:true})
     .map((res) => { 
       this.loggedInUser = res;
-      return  JSON.parse (this.loggedInUser._body)
+      return  JSON.parse (this.loggedInUser.body)
       })
    
   }
@@ -61,9 +61,10 @@ export class AuthService {
 
 
   getOneUser(userId) {
-    return this.http.post(`http://localhost:3000/user/` + userId, {withCredentials:true})
+    console.log('in the service: ', userId)
+    return this.http.get(`http://localhost:3000/user/` + userId, {withCredentials:true})
     .map((res) => { 
-    return JSON.parse ((<any>res)._body)
+    return JSON.parse ((<any>res).body)
     })
   
 }

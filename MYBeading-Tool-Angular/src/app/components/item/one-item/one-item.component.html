@@ -1,0 +1,39 @@
+<div class="form ">
+    <h1>{{item.title}}</h1>
+    <br>
+    <p>{{item.quantity}}</p>
+    <hr>
+    <p>{{item.price}}</p>
+    <hr> 
+    <p>{{item.totalPrice}}</p>
+    <hr>
+    <!-- <p>{{item.type}}</p>
+    <hr> -->
+    <p>{{item.description}}</p>
+    <hr>
+    <!-- <p>{{item.color}}</p>
+    <hr>
+    <p>{{item.dateOfPurchase}}</p>
+    <hr>
+    <p>{{item.placeOfPurchase}}</p>
+    <hr>
+    <p>{{item.material}}</p>
+    <hr>
+    <p>{{item.weight}}</p>
+    <hr>
+    <p>{{item.size}}</p>
+    <hr> -->
+    </div>
+
+ <!-- <form (submit)="addItem(usedQ, projId)" class="form">
+
+<label class="floaty2">Quantity to add</label>
+<input [(ngModel)]="usedQ" type="number"  class="floaty" #usedQ name="usedQ" >
+<br>
+<label class="floaty2">Select Project to add</label> -->
+  <select [(ngModel)]="projId">
+        <option *ngFor="let oneProject of projects" [ngValue]="oneProject._id">{{oneProject.name}}</option>
+      </select>
+<!-- 
+<button class="buttonSubmit">Add</button>
+</form> -->

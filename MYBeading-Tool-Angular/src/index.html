@@ -9,6 +9,97 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+
+    <nav class="navigation">    
+  
+        <li><a href="/">Home</a> </li>
+        <li>   
+            <div class="dropdown">
+                <a href="/" class="navbutton btn btn-secondary" id="dropdownMenuButton"> Hello, User</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/userpage">Account</a>
+                    <a class="dropdown-item" href="/update">Update Account</a>
+                </div>          
+            </div>
+        </li>      
+        <li><a href="/stories">Stories</a></li>
+        <li><a href="/"><img class ="logo" src="https://res.cloudinary.com/miss-yoko-beading/image/upload/v1532067003/Screen_Shot_2018-07-20_at_2.09.31_AM.png" alt="Miss Yoko Beading"></a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/shipping">Shipping info</a></li>
+    
+    
+    
+                  <li>{{#unless theUser}}<a href="/login">Log in</a>{{/unless}}</li>
+                  <li>{{#if theUser}} <div>Hello, {{theUser.username}}</div>{{/if}}</li>
+                  <li>{{#if theUser}} <div><a href="/logout">Logout</a></div>{{/if}}</li>
+
+                  <div *ngIf="theActualUser.password">
+                      Hello, {{theActualUser.username | json}}
+                      <button class="buttonSubmit" (click)="logMeOut()">Log Out</button>   
+                      </div>
+
+                     
+                   
+    
+    </nav>
+    
+    
+    
+    
+
+    <div class="indexpage"><app-root></app-root></div>
+
+
+  <footer>
+      <div class="footer-top">
+              <ul>
+                  <li>Miss Yoko Beading</li>
+                  <li><a href="/about-us">About us</a></li>
+                  <li><a href="/contact-us">Contact us</a></li>
+              </ul>
+                      
+              <ul>
+                  <li>MORE INFO</li>
+                  <li><a href="/shipping">Shipping</a></li>
+                  <li><a href="/stories">Stories</a></li>
+                  <li>><a href="/gemstones">Power of Gemstones</a></li>
+              </ul>
+                      
+              <ul>
+                  <li>FOLLOW US</li>
+                  <li><a href="">Twitter</a></li>
+                  <li><a href="">Facebook</a></li>
+                  <li><a href="https://www.instagram.com/missyokobeading/">Instagram</a></li>
+              </ul>
+  
+              <ul>
+                  <li>OUR LOCATION</li>
+                  <li>Miami Beach, Florida <br>33139 USA</li>
+              </ul>
+      </div>
+  
+      {{!-- </div>
+      
+      <div class="footer-bottom">
+      <div class="footer-bottom-left">
+          <img src="" alt="">
+      </div>
+  
+  
+      <div class="address">
+        <p></p>
+        <p></p>
+      </div>
+      </div> --}}
+  
+  </footer>    
+      <script src="https://use.fontawesome.com/1fb0eb3889.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+ 
+  
+
+  
 </body>
 </html>

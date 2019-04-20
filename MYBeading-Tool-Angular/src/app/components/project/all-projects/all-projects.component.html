@@ -1,0 +1,27 @@
+<h2>Your Projects</h2>
+<form  class="form"  (submit)="addNewProject()">
+  <h3>Add Project</h3>
+
+  <label class="floaty2">Name</label>
+  <input class="floaty" #title [(ngModel)]="project.name" name="title" type="text">
+  <br><br><br>
+  <label class="floaty2">Short Description</label>
+  <textarea class="floaty" #shortdescription [(ngModel)]="project.shortdescription" name="shortdescription" cols="10" rows="10"></textarea>
+  <br><br><br><br><br><br><br><br><br>
+  <label class="floaty2">Description</label>
+  <textarea class="floaty" #description [(ngModel)]="project.description" name="description" cols="30" rows="10"></textarea>
+
+<button class="buttonSubmit">Submit</button>
+
+</form>
+
+<div class="form" *ngFor="let project of projects">
+
+  <h3>project: {{project.name}}</h3>
+  <p>{{project.shortdescription}}</p>
+  <a class="buttonSubmit" [routerLink]="[project._id]">See Details</a><br>
+  <button class="buttonSubmit" (click)='deleteOne(project._id)'>Delete</button><br>
+  <a class="buttonSubmit" [routerLink]="[project._id, 'update']">Update</a>
+ 
+  <hr> 
+</div>

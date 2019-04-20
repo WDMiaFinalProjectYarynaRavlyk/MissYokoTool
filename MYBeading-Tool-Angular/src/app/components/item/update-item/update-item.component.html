@@ -1,0 +1,33 @@
+<form class="form"  (submit)=" updateOne()">
+  <h3>Update Task</h3>
+
+  <label class="floaty2">Name</label>
+  <input class="floaty" #title [(ngModel)]="item.title" name="title" type="text">
+  <br><br><br>
+  <label class="floaty2">Price</label>
+  <input class="floaty" #price [(ngModel)]="item.price" name="price" type="number">
+  <br><br><br>
+  <label class="floaty2">Quantity</label>
+  <input class="floaty" #quantity [(ngModel)]="item.quantity" name="quantity" type="number">
+  <br><br><br>
+  <label class="floaty2">Short Description</label>
+  <textarea class="floaty" #shortdescription [(ngModel)]="item.shortdescription" name="shortdescription" cols="10" rows="10"></textarea>
+  <br><br><br><br><br><br><br><br><br>
+  <label class="floaty2">Description</label>
+  <textarea class="floaty" #description [(ngModel)]="item.description" name="description" cols="30" rows="10"></textarea>
+  <br><br><br><br><br><br><br><br><br>
+  
+  <label class="floaty2" for="image">Image</label>
+  <input ng2FileSelect [uploader]="myCoolUploader" (change)="fileSelected(item._id)" class="newfile" type="file" name="theImage">
+  <br><br>
+
+
+<button class="buttonSubmit">Submit</button>
+
+</form>
+
+
+
+
+
+

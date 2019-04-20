@@ -26,3 +26,471 @@
 h2 {
     color: #43a3e6
 }
+
+
+
+
+.indexpage {
+    background-image: url(https://res.cloudinary.com/miss-yoko-beading/image/upload/v1532034923/background4.jpg);
+    margin: 0% auto;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding-top: 200px;
+    padding-bottom:50px;
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: white;
+    border-radius: 40px;
+    padding-bottom: 20px; 
+    justify-content: center;
+    align-items: center;
+    color: lightslategray;
+    clear: both;
+  }
+  
+
+  
+  .body {
+    margin: 0 0;
+  }
+  .space{
+    padding-top: 70px; 
+  
+  }
+  .space2{
+    padding-top: 20px; 
+  
+  }
+  
+  .navigation {
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #867f7f;
+    color: #5b5e6d;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+ 
+    background-color: white;
+  }
+  
+  .navigation li {
+    list-style-type: none; }
+  
+  .navigation li a{
+    color: palevioletred;
+    text-decoration: none;
+
+  }
+  
+  .navigation li a.selected {
+    background: none repeat scroll 0 0 grey;
+    text-decoration: none; }
+  
+    .navigation  input[type=text] {
+      float: right;
+      padding: 6px;
+      border: solid palevioletred .8;
+      margin-top: 8px;
+      margin-right: 16px;
+      font-size: 17px;
+  }
+  
+  @media screen and (max-width: 600px) {
+      .navigation input[type=text] {
+          float: none;
+          display: block;
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          padding: 14px;
+      }
+      .navigation  input[type=text] {
+          border: 1px solid #ccc;
+      }
+  }
+  
+  
+  .logo {
+    height: 90px;
+    padding-left: 50px; }
+  
+  .navbutton {
+    background-color: transparent;
+    color:palevioletred;
+    border: none;
+  }
+  
+  footer {
+    background-color: #2d354d;
+    color: white; 
+  
+  }
+  
+  footer ul {
+    list-style-type: none; 
+  }
+  
+  footer ul li {
+    padding: 5px; 
+  }
+  
+  footer ul li a{
+    text-decoration: none;
+    color: white; 
+  }
+  
+  .footer-top {
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 60px; 
+  }
+  
+
+  
+  .container2 {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid .4px black;
+    background-color: white;
+    border-radius: 40px;
+    padding: 30px;
+    margin: 40px;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    color: lightslategray;
+    font-size: 13px;
+   
+  }
+  
+  .container3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 50%;
+    border: solid .4px black;
+    background-color: white;
+    border-radius: 40px;
+    padding: 30px;
+    text-align: left;
+    color: lightslategray;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+    height: 200px;
+    margin-top: 30px;
+    
+   
+  }
+  
+  .container4 {
+    margin: auto;
+    flex-wrap: wrap;
+    width: 50%;
+    border: solid .4px black;
+    background-color: white;
+    border-radius: 40px;
+    padding: 30px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    color: lightslategray;
+    width: 300px;
+    height: 150px;
+    margin-top: 30px;
+   
+  }
+  
+  .container5 {
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    color: lightslategray;
+    margin-top: 30px;
+    justify-content: center;
+    align-content: center;
+    
+  
+  
+  }
+  
+  .container5 img {
+    align-content: center;
+    align-items: center;
+      border-radius: 40px;
+      height: 70vh;
+    
+  }
+  
+  .container5 h1 {
+  text-align: center;
+  }
+  
+  .cent {
+    align-content: center;
+    align-items: center;
+  }
+  
+  .cont2 {
+  width: 1200px;
+  }
+  
+  
+  
+  .indexpage h1{
+    color: #43a3e6;
+    text-align: center;
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+  
+  }
+  
+  
+  .indexA {
+    text-decoration: none;
+    color:lightslategray;
+  }
+  
+  .myslideshow {
+    display: flex;
+    justify-content: center;
+   
+  }
+  
+  .mySlides{
+    max-width: 600px;
+    max-height: 400px;
+    align-content: center;
+  }
+  
+  .container3 h1 {
+    color: #43a3e6;
+    text-align: center;
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+  
+  }
+  
+  .container3 h6{
+    color: #43a3e6;
+    text-align: center;
+  
+  }
+  
+
+  
+  #form {
+    margin: 30px auto;
+    width: 380px; }
+  
+  #form label {
+    color: #666;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%; }
+  
+  #form input,
+  #form button {
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: 0;
+    padding: 4px;
+    width: 100%; }
+  
+  #form button {
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s ease background;
+    width: 100%; }
+  
+  #form button:hover {
+    background: #fff;
+    color: #43a3e6;
+    transition: .3s ease background; }
+  
+  .message {
+    background: #F02B63;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%; }
+  
+  .itemsList {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-decoration: none;
+  }
+  
+  .itemsList_2 {
+    padding: 50px;
+    text-align: center;
+    text-decoration: none; 
+  
+  }
+  
+  .itemsList_2 .container4 h3{
+  color: #43a3e6;
+    text-align: center;
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+  }
+  
+  
+  .itemsList_2 a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .itemImagesmall {
+    border-radius: 20px;
+    width: 200px;
+    height: 240px; }
+  
+  .itemImage {
+    border-radius: 20px;
+    width: 320px;
+    height: 300px; }
+  
+  
+
+  
+    .oneItemPage {
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      text-decoration: none;
+    }
+  
+    .wrapper {
+      display: flex;  
+      flex-flow: row wrap;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .wrapper > * {
+      padding: 10px;
+      flex: 1 100%;
+    }
+  
+    .addReviewButton {
+      border: solid;
+      background-color: #43a3e6;;
+      color: floralwhite;
+      padding: 10px;
+      font-family:  "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+      border-radius: 20px;
+    }
+    .addReviewButton2 {
+      padding-left: 40px;
+    } 
+  
+    
+  .searchBox {
+    padding-top:40px;
+    padding-right: 40px;
+    float: right;
+  
+  }
+  
+  .postsPage {
+    padding-left: 40px;
+  }
+  
+  
+  #myInput  {
+    
+    border: .6px solid #f48fb1;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #f48fb1;
+  }
+  
+  .createacc {
+    text-align: center
+  }
+  .createacc a{
+    text-decoration: none;
+    color:#43a3e6;
+  }
+  
+  .createccbut {
+    padding-top: 60px; 
+  }
+  
+  
+  .createaccnewbox {
+    padding-left: 100px;
+  }
+  
+  .leftfl {
+    float: right;
+    clear: both;
+  }
+  
+  .leftfl2 {
+    float: right;
+  }
+  
+  .spec {
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s ease background;
+    width: 100%; }
+  
+    .spec button{
+      box-sizing: border-box;
+    }
+  
+    .spec2 {
+      padding-bottom: 40px;
+    }
+  
+    .clearb {
+      clear: both;
+    }
+  
+    input [type="text"] {
+      width: 100%;
+    }

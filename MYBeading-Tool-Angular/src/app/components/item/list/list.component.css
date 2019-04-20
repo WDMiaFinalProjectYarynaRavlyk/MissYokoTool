@@ -1,0 +1,37 @@
+.form {
+    padding: 20px;
+    width:  500px;
+}
+
+.floaty {
+    float: right;
+   
+}
+
+.floaty2 {
+    float: left;
+}
+
+.buttonSubmit {
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    padding: 5px;
+    width: 200px;
+    margin: 10px; 
+}
+
+/* .textarea {
+    width: 200px;
+} */
+
+.buttonSubmit a {
+text-decoration: none;
+color: white;
+}
+
+h2 {
+    color: #43a3e6
+}

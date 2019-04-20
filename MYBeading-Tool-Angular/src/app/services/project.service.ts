@@ -1,26 +1,37 @@
-import {throwError as observableThrowError} from 'rxjs';
-import {catchError, map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/map'
 
+@Injectable({
+  providedIn: 'root'
+})
+export class ProjectService {
 
-  @Injectable()
-  export class ProjectService {
+    constructor(private myHttp: Http) { }
 
- 
-  errorMessage:any;
+    getProjectEntries(){
+      return this.myHttp.get('http://localhost:3000/projects',)
+      .map((res)=> res.json())
+    }
 
+    addNewProject(project){
+      return this.myHttp.post('http://localhost:3000/projects/create', project)
+      .map((res)=>res.json());
+    }
 
-  handleError(e) {
-    // this.errorMessage = e.json().message;
-    return observableThrowError(e.json().message);
-  }
+    getOneProject(projectId){
+      return this.myHttp.get('http://localhost:3000/projects/'+ projectId)
+      .map((res)=> res.json())
+    }
 
-  constructor(private myHttp: Http) {}
+    deleteProject(projectId){
+      return this.myHttp.post('http://localhost:3000/projects/'+ projectId +'/delete', projectId)
+      .map((res)=> res.json())
+    }
 
-  getAllEntries(){
-    return this.myHttp.get(`http://localhost:3000/projects`, { withCredentials: true })
-    .map(res => res.json())
-  }
+    updateProject (projectId){
+      return this.myHttp.post('http://localhost:3000/projects/'+ projectId +'/update', projectId)
+      .map((res)=> res.json())
+    }
 
-  }
+}

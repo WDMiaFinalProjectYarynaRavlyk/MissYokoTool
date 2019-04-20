@@ -15,22 +15,27 @@ export class ItemService {
     }
 
     addNewEntry(item){
-      return this.myHttp.post('http://localhost:3000/inventory/create',item)
+      return this.myHttp.post('http://localhost:3000/inventory/add', item,{ withCredentials: true })
       .map((res)=>res.json());
     }
 
-    getOneEntry(itemId, item){
-      return this.myHttp.get('http://localhost:3000/inventory/'+ itemId, item)
+    getOneEntry(itemId){
+      return this.myHttp.get('http://localhost:3000/inventory/'+ itemId, { withCredentials: true })
       .map((res)=> res.json())
     }
 
     deleteEntry(itemId){
-      return this.myHttp.post('http://localhost:3000/inventory/'+ itemId +'/delete', itemId)
+      return this.myHttp.post('http://localhost:3000/inventory/'+ itemId +'/delete', itemId, { withCredentials: true })
       .map((res)=> res.json())
     }
 
-    updateEntry (item, itemId){
-      return this.myHttp.post('http://localhost:3000/inventory/'+ itemId +'/update', item, itemId)
+    updateOne (item){
+      return this.myHttp.post('http://localhost:3000/inventory/'+ item._id +'/update', item, { withCredentials: true })
+      .map((res)=> res.json())
+    }
+
+    itemAddToProject(data, usedQ) {
+      return this.myHttp.post('http://localhost:3000/inventory/addtoproject', data, usedQ )
       .map((res)=> res.json())
     }
 
